@@ -1,5 +1,7 @@
 
 var SH = require('../lib/SH');
+var $ = require('jquery');
+
 
 var node_array = {
 	
@@ -7,7 +9,7 @@ var node_array = {
         var arr = [].slice.call(arguments);
         // cleanup empty indexes
         arr.forEach(function(element, index, array){
-            if(!element)
+            if(!element && element != 0)
                 array.splice(index, 1);
         });
         arr.__proto__ = this.proto;
@@ -38,6 +40,9 @@ var node_array = {
                     }
                 })
             )();
+        },
+        get: function(){
+            return 'SA';
         }
     }
 }
